@@ -35,35 +35,40 @@ def etherscan_api_response_to_json(url):
                 "time_withdrawl": "",
                 }
         }       
-        print(dictWithDepo)
         for tx in results:
             recipient = tx["to"]
             sender = tx["from"]
-
             if recipient == MAGIC_ADDRESS: #then this is a deposit to magic our contract 
-                #if it exists then update the time
-                if dictWithDepo[sender] :
-                    tx["deposit_time"] = dictWithDepo[sender]["time_deposit"] #deposit time equals now 
-                    tx["withdrawal_time"] = tx["timeStamp"] 
-                else:
-                    #if not does not exist then add to dict
-                    dictWithDepo[sender] = {
-                        "time_deposit": tx["timeStamp"],
-                        "time_withdrawl": tx["timeStamp"]
-                    }
-                    #and add deposit time and withdrawal time to transaction txt
-                    tx["deposit_time"] = tx["timeStamp"]
-                    tx["withdrawal_time"] = None
+                #if it exists then update the time_deposit
+                if sender in dictWithDepo.keys():
+                    if dictWithDepo[sender]:
+                        tx["deposit_time"] = dictWithDepo[tx["from"]]["time_deposit"] #deposit time equals now 
+                        tx["withdrawal_time"] = tx["timeStamp"] 
+                    else:
+                        #if not does not exist then add to dict
+                        dictWithDepo[tx["from"]] = {
+                            "time_deposit": tx["timeStamp"],
+                            "time_withdrawl": tx["timeStamp"]
+                        }
+                        tx["deposit_time"] = tx["timeStamp"]
+                        tx["withdrawal_time"] = None
             #if the receipent is something other than the magic address then it is a withdrawal
             #remvoe this transaction from th results
-            elif recipient != MAGIC_ADDRESS:
+            elif recipient == MAGIC_ADDRESS:
                 results.remove(tx)
-        #write the json file
-        print(dictWithDepo)
-        with open(FILEPATH_JSON, "w") as f:
-            json.dump(results, f, indent=4)
+            results.append(tx)
+            data = {}
+            data["results"] = results
+            with open(FILEPATH_JSON_FINAL, "w") as f:
+                json.dump(data, f, indent=4)
         
 
+
+
+
+
+        
+'''
 def write_csv(filename):
     with open(filename, "w") as f:
         writer = csv.writer(f)
@@ -73,11 +78,8 @@ def write_csv(filename):
             for tx in json_data["result"]:
                 writer.writerow([tx["from"], tx["timeStamp"], tx["timeStamp"], tx["value"]])
 
-
+'''
 etherscan_api_response_to_json(url)
-write_csv(FILEPATH_CSV)
+#write_csv(FILEPATH_CSV)
 
 
-
-
-    
