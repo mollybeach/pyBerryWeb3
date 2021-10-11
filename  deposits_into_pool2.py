@@ -9,6 +9,7 @@ ETHERSCAN_API_KEY = "8DZ7FZZ3GEM1KN4SJAKDEF7KWQJHJKIA62"
 #TREASURE_ADDRESS = "0x07edbd02923435fe2c141f390510178c79dbbc46"
 POOL_2_ADDRESS = "0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A"
 CHECKSUM_ADDRESS = Web3.toChecksumAddress(POOL_2_ADDRESS )
+MINTING_ADDRESS = "0x0000000000000000000000000000000000000000"
 #make an api call in web3 using Etherscan API and return the response
 #def get_etherscan_api_response(url):
 #web3 = Web3(Web3.HTTPProvider(ALCHEMY_URL))
@@ -42,7 +43,7 @@ def get_usd_value(eth_value):
 # list of addresses who deposited into pool2 (address, time in, time out, # LP tokens deposited by address) - https://etherscan.io/token/0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A?a=0x8c56ca4f7eb12a7c217bbe36cc427a9dcb66f590
 
 
-
+'''
 def save_etherscan_api_response(url):
     response = get_etherscan_api_response(url)
     # format json response
@@ -50,26 +51,44 @@ def save_etherscan_api_response(url):
     # save to a json file
     with open("./etherscan_api_response.json", "w") as f:
         f.write(formatted_response)
+'''
+#get reponse from api url and then save as json and remove from = MINTING_ADDRESS
+def etherscan_api_response_to_json(url):
+    response = get_etherscan_api_response(url)
+    formatted_response = json.dumps(response, indent=4)
+    with open("./etherscan_api_response.json", "w") as f:
+        f.write(formatted_response)
+    resulting_list = []
+    with open("./etherscan_api_response.json", "r") as f:
+        json_data = json.load(f)
+        for tx in json_data["result"]:
+            if tx["from"] != MINTING_ADDRESS:
+                resulting_list.append(tx)
+    data = {}
+    data["result"] = resulting_list
+
+    with open("./etherscan_api_response_final.json", "w") as f:
+        json.dump(data, f, indent=4)
 
 #write the json file to a csv file
 def write_csv(filename):
     with open(filename, "w") as f:
         writer = csv.writer(f)
         writer.writerow(["address", "time_in", "time_out", "lp_tokens_deposited"])
-        with open("./etherscan_api_response.json", "r") as f:
+        with open("./etherscan_api_response_final.json", "r") as f:
             json_data = json.load(f)
             for tx in json_data["result"]:
                 writer.writerow([tx["from"], tx["timeStamp"], tx["timeStamp"], tx["value"]])
 '''
 def write_etherscan_api_response_to_csv(url):
     response = get_etherscan_api_response(url)
-    with open("./etherscan_api_response.csv", "w") as f:
+    with open("./etherscan_api_response_final.csv", "w") as f:
         writer = csv.writer(f)
         writer.writerow(["blockNumber", "timeStamp", "hash", "nonce", "blockHash", "transactionIndex", "from", "to", "value", "gas", "gasPrice", "isError", "txreceipt_status", "input", "contractAddress", "cumulativeGasUsed", "gasUsed", "confirmations"])
         
         for tx in response["result"]:
             writer.writerow(tx.values())
-            '''
+'''
 
 
 
@@ -77,7 +96,6 @@ def write_etherscan_api_response_to_csv(url):
 
 
 
-
-save_etherscan_api_response(url)
+etherscan_api_response_to_json(url)
 #write_etherscan_api_response_to_csv(url)
-write_csv("./etherscan_api_response.csv")
+write_csv("./etherscan_api_response_final.csv")
