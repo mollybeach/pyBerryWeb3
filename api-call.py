@@ -13,9 +13,12 @@ CHECKSUM_ADDRESS = Web3.toChecksumAddress(TREASURE_ADDRESS )
 
 #print(web3.eth.getBalance(CHECKSUM_ADDRESS))    
 #string interpolation etherscan api url web3
-url = f"https://api.etherscan.io/api?module=account&action=txlist&address=0x07edbd02923435fe2c141f390510178c79dbbc46&startblock=0&endblock=99999999&sort=asc&apikey=8DZ7FZZ3GEM1KN4SJAKDEF7KWQJHJKIA62"
+
+#url = f"https://api.etherscan.io/api?module=account&action=txlist&address=0x07edbd02923435fe2c141f390510178c79dbbc46&startblock=0&endblock=99999999&sort=asc&apikey=8DZ7FZZ3GEM1KN4SJAKDEF7KWQJHJKIA62"
+
 
 #make an api call to url and return the response and save to a json file ./etherscan_api_response.json
+url = f"https://api.etherscan.io/api?module=account&action=txlist&address={CHECKSUM_ADDRESS}&startblock=0&endblock=99999999&sort=asc&apikey={ETHERSCAN_API_KEY}"
 
 def get_etherscan_api_response(url):
     import requests
@@ -24,15 +27,13 @@ def get_etherscan_api_response(url):
 
 def save_etherscan_api_response(url):
     response = get_etherscan_api_response(url)
-    with open('./etherscan_api_response.json', 'w') as outfile:
-        json.dump(response, outfile)
+    # format json response
+    formatted_response = json.dumps(response, indent=4)
+    # save to a json file
+    with open("./etherscan_api_response.json", "w") as f:
+        f.write(formatted_response)
         
 
 
 
 save_etherscan_api_response(url)
-
-
-
-
-
