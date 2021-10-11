@@ -1,5 +1,6 @@
 #from eth_typing.evm import ChecksumAddress
 import json
+import csv
 from web3 import Web3
 
 #ALCHEMY_MAINNET_KEY="WT5LDdM3ZG2O_3Bz4KbfstNc-vXskLmF"
@@ -25,6 +26,8 @@ def get_etherscan_api_response(url):
     response = requests.get(url)
     return response.json()
 
+
+'''
 def save_etherscan_api_response(url):
     response = get_etherscan_api_response(url)
     # format json response
@@ -32,8 +35,24 @@ def save_etherscan_api_response(url):
     # save to a json file
     with open("./etherscan_api_response.json", "w") as f:
         f.write(formatted_response)
+
+#write the json file to a csv file
+
+def write_etherscan_api_response_to_csv(url):
+    response = get_etherscan_api_response(url)
+    with open("./etherscan_api_response.csv", "w") as f:
+        writer = csv.writer(f)
+        writer.writerow(["blockNumber", "timeStamp", "hash", "nonce", "blockHash", "transactionIndex", "from", "to", "value", "gas", "gasPrice", "isError", "txreceipt_status", "input", "contractAddress", "cumulativeGasUsed", "gasUsed", "confirmations"])
         
+        for tx in response["result"]:
+            writer.writerow(tx.values())
+'''
 
 
 
-save_etherscan_api_response(url)
+
+
+
+
+#save_etherscan_api_response(url)
+#write_etherscan_api_response_to_csv(url)

@@ -1,0 +1,342 @@
+
+- **1/3 Supply**
+    - **Magic farm**
+        - 24/9 - 7/10
+        - Emissions for staked:
+            - Loot
+            - N
+            - Agld
+            - Treasure (fractionalised)
+        - Projected supply end of farm: ~100-110m
+- **2/3 Supply**
+    - Emissions - Emitted on asymptotic curve similar to BTC halvening, but occuring every year
+    - Treasure mines (LP / Staking 60%) -
+    - Ecosystem fund (30%)
+    - Team development (10%) - is this treasury and/or incentives for team?
+- Proposed
+    - Mining - 25%
+        - PoW - legions + treasure to mine
+        - Is there a way to adjust difficulty rating as mine depletes?
+        - Each mine is made up of:
+            - [x] blocks
+            - each block contains [x] magic
+            - blocks take on average [2 hours] to mine at 1x speed
+        - Rate of mining (assuming no modifiers)
+            - Common - 0.5x
+            - Uncommon - 0.75x
+            - Rare - 1.25x
+            - Legendary - 1.5x
+    - Staking / liquidity - 10%
+    - Ecosystem fund - 20%
+    - Team - 10% of treasure farm and mining
+
+**veMAGIC / LP**
+
+- Objective
+    - Incentivise and reward long-term holding and active participation in the Treasure ecosystem
+    - Embed game theoretic design to drive collective / group outcomes
+- Overview
+    - veMAGIC and veMAGIC LP are the special access [keys] within the Treasure ecosystem ('keys to the Citadel')
+    - 've' MAGIC / LPs are transmuted through time (PoW) and sacrifices to the gods (treasures)
+    - Holders are granted modifiers
+- Breaking Transmutation
+    - Holders may break their transmutation from 've' back to MAGIC at a cost relative to the time remaining in their lock (or some other mechanism)
+        - [x%] of MAGIC cost from breaking transmutations are [burnt], [x%] gifted to remaining veMAGIC holders (reward the strong minded)
+    - Transmutation back to MAGIC has 24h delay
+- Collective outcomes (3,3 | -3,-3)
+    - veMAGIC and veMAGIC LP are impacted by the 'Collective Wealth' and 'Tragedy of the Commons' (ie. lettuce hands) group modifiers
+    - Collective Wealth (3,3)
+        - average veMAGIC as % of total MAGIC vs thresholds across [x epochs] are grants access to (options):
+            - higher tier of boost
+            - special items
+        - Full season (or x epochs) of consecutive max tier threshold met unlocks mythical items
+    - Tragedy of the Commons (-3,-3)
+        - If net veMAGIC movements are negative over [x] epochs, all veMAGIC modifers are reduced by [x] for [x] epochs
+        - +MAGIC and ulMAGIC holders immune
+        
+- Mechanics
+    - **Rewarding treasure holders**
+        - each treasure worth x points based on rarity
+        - x total points of treasure and % of veMAGIC required for GENESIS event; powering on the genesis mine
+        - 5% of all mine yield goes to treasure stakers
+        - the 5% distributed based on relative points v total (passive incoom + rewards holders of rarer treasure)
+        - when staked veMAGIC reaches thresholds of circ supply, it unlocks additional capacity for the mine (eg. 25% ve staked = +10% capacity)
+        - genesis mine will have very attractive APR
+        - this creates demand for treasure secondary to 1) turn on mine & 2) share of incooom which scales with legion productivity and capacity increases (ve staked)
+        - creates demand for veMAGIC locking to 1) turn on mine 2) unlock greater mine capacity
+    - **Transition to L2**
+        - aMAGIC
+            - Objectives
+                - Mitigate 6 Oct dump
+                - Actively migrate users from SSS to Arbi & 'mainnet'
+                - Reward early supporters
+            - Redeemable 1:1.X for veMAGIC
+            - What you get
+                - Early access to beta environment on Arbi
+                - [15%] additional veMAGIC
+            - Process of migration
+                - airdropped aMAGIC on arbi
+                - User can select which timelock to apply at redemption (still thinking through min locking period - maybe 2 weeks or 1 month)
+        - MAGIC LP
+            - Boosted rewards for x weeks
+        
+    
+    - veMAGIC
+        - Objectives
+            - Reward loyal users
+            - Act as access key to Treasure / Magic ecosystem
+        - Mechanics - Transmute and lock MAGIC for:
+            - GENESIS
+                - Required to power up the town which houses the path to the mine, marketplace etc --> need x% of MAGIC circ supply + x points of Treasure
+                    - (prob use lower threshold so it turns on, but nice way to gamify, potentially could remove the treasure component
+                - Required to power up (unlock) the Genesis Mine (x% of MAGIC circ supply must be staked at all times + x points of Treasure)
+                - Expands GENESIS mine capacity --> if staked ve / CS reaches certain thresholds (and stays there), new mine capacity opens up (ie higher APR)
+                - Grants a boost on mining productivity (and later treasure and legion farming) --> based on your relative share of staked ve to total --> need to confirm the math on this
+            - access Seasonal features
+                - modifiers based on Guild selected
+                    - **Treasure hunters**: % boost on treasure farm productivity; higher chance of finding rare treasures in mines for alchemy (creating rarer legions)
+                    - **Mercenaries** (legions): % boost on legion and or mining efficiency
+                    - **Merchants:** % on selected mines or % of treasure farms or % of marketplace (the most passive strategy)
+                - There is a [5%] fee from mining / farming related to each Guild's specialty. veMAGIC holders get % of this fee based on relative holdings
+                - quests
+                - aesthetics
+                - rewards
+                    - individual rewards
+                    - group rewards (% of total locked for x epochs)
+            - voting in a Community Treasure DAO?
+            - partnership integrations / exclusive benefits
+            - DeFi access key
+                - Staking on marketplace
+                    - NFT staking - stake X NFT in X pool, and receive your proportional share of 1.25% on sales of X NFT (25 / 75 based on X NFT and veMAGIC holding)
+                - NFT / consumable yield farms
+                    - Stake NFT on consumable farms to earn [x] on yield
+                - Borrowing against your NFT
+                    - use veMAGIC and NFT as collateral to borrow MAGIC (set your own params)
+                    - lend MAGIC, consumables etc for variable IR (based on FUSE)
+                - Lending NFTs
+                    - Lend your legion - dont have time or skill to play / earn; just lend it and split earnings
+                - Sell future yields on NFT / consumables for discount on face value
+                - Scholarship - open bids for % share on your winnings and split earnings
+                - Pool resources under mini DAO share earnings
+            - How
+                - Time lock dictates weighting (maybe change to round numbers for smooth brains)
+                    - 1 month → 0.1
+                    - 3 month → 0.35
+                    - 6 month → 0.75
+                    - 12 month → 1.75
+                - Application
+                    - relative veMAGIC holdings determine your share of:
+                        - Guild yields (the 5% fee) across mining, legion, merchant
+                        - Boost on your Guild's speciality (eg. you get higher mining efficiency)
+                            - up to 3x boost determined by your relative share of veMAGIC in that guild (maybe quadratic to help shrimps)
+                - Decay
+                    - Decay of voting power on linear basis
+                    - Does this impact yield boost?
+                        - If yes, incentivises ppl to replenish
+                - 
+            - Mining
+                - ALL mined MAGIC is vested:
+                    - 30% immediately, linear over [4] weeks
+        
+    - **Ideas**
+        - Seasons
+            - Each Season has its own unique characteristics
+                - theme / aesthetic
+                - ideological options
+                - quests
+            - Need veMAGIC to access features and benefits within eash season
+            - veMAGIC holders select one of [x] guilds with the following modifiers:
+                - **Treasure hunters**: % boost on treasure farm productivity; higher chance of finding rare treasures in mines for alchemy (creating rarer legions)
+                - **Mercenaries** (legions): % boost on legion and or mining efficiency
+                - **Merchants:** % on selected mines or % of treasure farms or % of marketplace (the most passive strategy)
+            - Guild members can still do all tasks, but they will be stronger at one type of activity; can be changed each Season —> do we give ppl bonuses for consecutive seasons in 1 Guild?
+        - Ideologies (introduce in second season)
+            - Selection of 2-3 ideologies at the start of each season
+            - Each ideology shapes the meta for the season across
+                - mining
+                - legion creation
+                - marketplace
+                - [taxes]
+        - Core mechanics
+            - Key Variables that must remain in balance
+                - MAGIC
+                - Treasures
+                - Legions
+            - Core Actions
+                - **Mining MAGIC** - need legions + treasure (equipment)
+                - **Training legions** - need legions + magic
+                - [**Transmuting rare legions / heroes** - NFTs (ala Axies)] - need legions + magic + certain treasures
+                - **Farm treasures** - need treasures [+ legions]?
+                - **Completing Quests** (rares, game progression) - need legions + treasure (equipment)
+                - **Selling** Treasures, Legions (and others) in Marketplace - no requirements
+        - Treasures
+            - Needed for mining and quests equipment
+            - Rarer treasures needed to create rarer legions
+            - Stake at Bank to make more
+            - Long-term: Eventually make consumables
+        - Legions
+            - Stake legions and magic to make more Legions (maybe add certain treasures for better types of legions?)
+            - Send legions to mine for Magic
+        - Quests
+            - need legions + treasure
+            - rewarded in game progression, rare items (maybe temporary modifiers), aesthetics to town hall / heroe etc
+    - MAGIC LPs
+        - Objective is to:
+            - maintain total liquidity within [x] band of circ supply (policy decision)
+            - maintain community LP share of total LP within given band; the balance will be bonds
+        - Staking LPs —> new contract
+            - No timelock: current LP reward program (10.5m / 90 days)
+            - 1 month+:
+                - Above
+                - Special quests per Season
+                - Unique aesthetic
+                - [Mine common] legions per [x epochs] per [x] LPd?
+        
+        ---
+        
+
+**Future Use Cases**
+
+- MAGIC
+    - Means of exchange in marketplace and consumables (likely offer ETH as well)
+    - Stake and or burn to combine with treasures to craft items / consumables and legions
+    - Fee capture: stake MAGIC for fixed period to access % of fees on secondary market (ala veCRV model)
+        - The longer you stake, the higher the boost
+        - Vested rewards: Cliff + linear
+- LP Design
+    - Transition to PCA
+        - What is the ideal % of protocol owner liquidity
+        - Bonds
+            - Sell MAGIC at discount to market rate
+            - Convert [80-90%] into permanent liquidity, balance to treasury
+            - Vest bonds over [5] days with partial claim
+            - Create utility for bonds through NFT such as a temporary boost card for mines
+    - Rewards
+        - Reward current LPs retrospectively based on tenure and value
+            - modifiers
+            - access to quests
+            - exclusive art etc
+        - Stake LP for fixed periods (veCRV model)
+            - longer the stake, greater the reward
+                - special drill for mines
+                - access to exclusive quests / items
+            - can be used or sold on secondary market
+    - 
+
+**Inbound Partnerships - using external tokens, NFTs within Treasure**
+
+- Unlock value for NFTs and defi tokens within Treasure to establish reciprocal value creation and **build a moat through compounding network effects**
+- DeFi
+    - Target dormant defi tokens with strong communities and novel primatives that can be applied within Treasure
+    - Use cases
+        - Boost on consumable farms
+        - Boost on secondary market fees
+        - Special / exclusive access to quests and items
+        - Exclusive skins
+    - Candidates
+        - sOHM
+        - Alchemix
+- NFT
+    - Legions - PFP auto chess
+    - Use cases
+        - Special modifier within Legions game and/or consumables item
+        - 
+    - Candidates
+        - N
+        - Loot
+        - BAYC?
+        - Cool cats?
+
+**Outbound** **Partnerships - using MAGIC and Treasure externally**
+
+- ddd
+
+**Follow up**
+
+- Emission curve
+- PoW mining model
+    - Define mines
+- LP Model
+    - LP utility
+    - bonds
+- Quests
+- 
+
+---
+
+[**OLD**]
+
+- **veMAGIC**
+    - Transmute MAGIC to veMAGIC for special modifiers
+    - Summoning recipe (can come up with better names)
+        - Basic: [1 month] time locked
+        - Medium: [3 month] time locked + [x] treasures
+        - High: [6 months] time locked + [x] treasures
+        - Ultimate: [12 months] time locked + [x] grin or honeycomb + 1 legion
+    - Modifiers (all boosts on x point grade; grade dictated by Group modifiers)
+        - Basic:
+            - Access to basic mines
+            - [x] fee capture
+        - Medium:
+            - Access to basic and medium mine
+            - [x] boost on fee capture
+        - High:
+            - Access to basic, medium + high mines
+            - [x] boost on fee capture
+        - Ultimate:
+            - Access to all mines
+            - Max boost on fee capture
+            - Immune from 'Tragedy of the Commons'
+    - Special Access - Post Treasure farm transition
+        - First [x] that transition from farm access higher tier for free / discount?
+    
+- **veMAGIC LP**
+    - Objective is to:
+        - maintain total liquidity within [x] band of circ supply (policy decision)
+        - maintain community LP share of total LP within given band; the balance will be bonds
+    - Transmute MAGIC and ETH into veMAGIC LP for special modifiers
+    - Summoning recipe (similar structure to veMAGIC, but probably should be less onerous given the extra steps and risk involved with IL. Maybe just staking and no item / summoning?)
+        - Basic: [1 month] time locked
+        - Medium: [3 month] time locked + [x] treasures
+        - High: [6 months] time locked + [x] treasures
+        - Ultimate: [12 months] time locked + [x] grin or honeycomb
+    - Modifiers (To discuss to what extent modifiers should differ from veMAGIC)
+        - Basic:
+            - Access to basic mines
+            - [x] boost on mining efficiency
+        - Medium:
+            - Access to basic and medium mines
+            - [x] boost on mining efficiency
+        - High:
+            - Access to basic, medium + high mine
+            - [x] boost on mining efficiency
+        - Ultimate:
+            - Access to all mines + rare mines
+            - [Max] boost on mining efficiency
+            - Immune from 'Tragedy of the Commons'
+    - Special Access - Post Treasure farm transition
+        - All LPs from start of SSS get 'Medium' veMAGIC LP (with x month discount)
+        - All LPs from before SSS get 'High' veMAGIC LP (with x month discount)
+        - All LPs who have LP'd from day one / two get Ultimate veMAGIC (with x month discount)
+        - How do we transition LPs to ve model without them pseudo rugging us?
+    - Collective Wealth modifer
+        - If % community LP remains within policy band for [x] epochs, all veMAGIC LPs get [boost]
+    - Tragedy of the commons modifier
+        - If % community LP below policy band within [x] epochs, mining efficiency modifiers are reset back one level lower for [1] epoch
+    
+- [**+MAGIC**] (veMAGIC + veMAGIC LP)
+    - The ultimate keys bestowed upon only the few exalted, dedicated adventurers
+    - These are as rare as they are powerful. Only [x] can exist at one time
+    - Summoning recipe
+        - Ult veMAGIC + Ult veMAGIC LP + [x] Rare Legions sacrificed + [x] Honeycomb + [x] Grin + [x] Donkey
+        - And/Or top [x] ranked players (active for 1 season only)
+    - Modifers
+        - [x] boost on mining and consumable farm efficiency
+        - [x] boost on fee capture
+        - [x] exclusive quests
+        - [x] exclusive partner benefits (eg. sOHM)
+        - [x] exclusive access to the council of gods (similar to a community DAO..?)
+        - Immunity from 'Tragedy of the Commons'
+    - Special Access - Post Treasure farm transition
+        - Offer [discount] on above summoning spell for the first [x] adventurers (maybe active for 1 season only)
+        - Special NFT 'The First Gods'
