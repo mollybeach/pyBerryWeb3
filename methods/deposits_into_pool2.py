@@ -38,7 +38,7 @@ def saveascsv():
 
 
 def change_data():
-    file = pd.read_csv("../response/json/etherscan_edited_all.csv")
+    file = pd.read_csv("./response/json/etherscan_edited_all.csv")
     file = file[file["to"] == MAGIC_ADDRESS]
     df = file
     df.sort_values(by=['from'], inplace=True)
@@ -50,15 +50,23 @@ def change_data():
             prev_timestamp = prev["timeStamp"]
             same_sender.loc[:, "deposit_time"] = prev_timestamp.item()
             same_sender.loc[:, "withdrawal_time"] = same_sender.loc[:, "timeStamp"]
+            same_sender['withdrawal_time'] = pd.to_datetime(same_sender['withdrawal_time'], unit='s')
             df.loc[df['from'] == sender, :] = same_sender
         else:
             copy = df.loc[df['from']==sender, :]
             copy.loc[:, "deposit_time"] = copy.loc[:, "timeStamp"]
             copy.loc[:, "withdrawal_time"] = None
             df.loc[df['from']==sender, :] = copy
-    df = df[["from","deposit_time","withdrawal_time", "value"]]
     
-    df.to_csv("../response/json/etherscan_cols_removed.csv", index=False)
+    df = df[["from","deposit_time","withdrawal_time", "value"]]
+    df['withdrawal_time'] = df['withdrawal_time'].astype(str).replace('\.0', '', regex=True)
+    #convert deposit time to unix timestamp
+    df['deposit_time'] = pd.to_datetime(df['deposit_time'], unit='s')
+    #convert withdrawal time to unix timestamp
+    # df['withdrawal_time'] = pd.to_datetime(df['withdrawal_time'], unit='s')
+
+    df.to_csv("./response/json/etherscan_cols_removed.csv", index=False)
+    
 
 
 change_data()
